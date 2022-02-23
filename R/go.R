@@ -14,13 +14,6 @@ go <- function(envir=.GlobalEnv, examples=TRUE) {
     header = shinydashboard::dashboardHeader(
       title = "I Go R"
       ,tags$li(class = "dropdown", em(.IGoR$Z$version))
-      ,tags$li(tags$a(
-                 target="_blank",
-                 href = 'http://www.insee.fr',
-                 img(src = "images/logo_insee.png",
-                     title = "insee.fr", height = "46px"),
-                 style = "padding-top:2px; padding-bottom:2px;"),
-               class = "dropdown")
     ),
 
     sidebar = shinydashboard::dashboardSidebar(
