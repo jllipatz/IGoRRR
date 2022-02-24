@@ -12,11 +12,11 @@
     "contents",
     "view",
     "browse",
-    "edit",
     "distinct",
     "create",
     "import",
     "export",
+    "edit",
 	  "tables"],
 	"update":[
     "rename",
