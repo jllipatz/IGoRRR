@@ -1,7 +1,7 @@
 Package: IGoRRR
 Type: Package
 Title: A Shiny Interface for Simple Data Management
-Version: 0.2.2
+Version: 0.3.0
 Author: Jean-Luc Lipatz [aut, cre], Bernard Gestin [ctb]
 Maintainer: Jean-Luc Lipatz <jean-luc.lipatz@insee.fr>
 Description: 
