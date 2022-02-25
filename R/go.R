@@ -43,6 +43,8 @@ go <- function(envir=.GlobalEnv, examples=TRUE) {
     shinydashboard::dashboardBody(
       div(id = "form",
         # Following javascript code is imported from https://colinfay.me/watch-r-shiny/
+        # Don't re-use or modify without contacting the author at contact@colinfay.me 
+        # License : MIT
         tags$script(
           'function checkifrunning() {
           var is_running = $("html").attr("class").includes("shiny-busy");
