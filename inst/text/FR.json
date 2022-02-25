@@ -353,16 +353,13 @@
    "info":[
      "Cette page recense toutes les tables, objets de type <strong>data.frame</strong> ou mieux, présents en mémoire ",
      "et associés à un symbole de l'<strong>environnement global</strong> qui leur sert de nom.<br>",
-     "Les tables de test <em>mtcars1</em> et <em>nanopop</em> sont initialisées au démarrage de la session IGoR.",
+     "Les tables de test <em>enquête</em>, <em>Martinique</em> et <em>nanopop</em> sont (ré)initialisées au démarrage de la session IGoR.",
      "Les autres tables existeront jusqu'à ce que la session R soit fermée : si IGoR est lancé depuis RStudio ou RGui, jusqu'à la fermeture de RStudio ou RGui;",
-     "si IGoR est lancé par un <em>.bat</em> jusqu'à la sortie d'IGoR.<br>",
-     "Il est possible de demander la sauvegarde automatique en fin de session, de l'intégralité des tables dans le fichier <strong>IGoR.RData</strong>",
-     "du répertoire accéssible sous le nom 'home' dans les dialogues des pages de lecture et d'écriture de tables (résultat de la fonction <code>R.home()</code>)."],
+     "si IGoR est lancé par un <em>.bat</em> jusqu'à la sortie d'IGoR.<br>"],
    "table": "Table",
    "source": "Source",
    "created": "Création",
    "delete": "Supprimer les références sélectionnées",
-   "save": "Sauvegarder l'intégralité des tables en fin de session",
    "log": "Créer une table à partir du log",
    "log.out": "Mémoriser sous le nom :"
  },
