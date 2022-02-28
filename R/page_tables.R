@@ -20,6 +20,8 @@ page_tables <- list(
 
     output$tables.output <- renderUI({
       .IGoR$state$list
+      .IGoR$state$meta
+      .IGoR$state$data
       do.call(tags$table,
         list(style = "border: 1px solid black; padding: 10px; width: 100%",
           tags$tr(
