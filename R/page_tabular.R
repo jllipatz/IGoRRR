@@ -35,7 +35,7 @@ page_tabular <- list(
         min="min",
         max="max")[i]
       else {
-        w <- .name(w)
+        w <- ..name(w)
         glue(
           c(n="sum*{w}",
           all="Percent('all',fn=wtd.percent)*{w}",
