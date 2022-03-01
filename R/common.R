@@ -1,4 +1,4 @@
-## Since 3.5, as_tibble clears class skim_df whenit exists
+## Since 3.5, as_tibble clears class skim_df when it exists
 as_tibble <- function(.data) if ("tbl_df" %in% class(.data)) .data else tibble::as_tibble(.data)
 
 
@@ -294,7 +294,7 @@ as_tibble <- function(.data) if ("tbl_df" %in% class(.data)) .data else tibble::
 ..gSaveCmd <- function(input,page)
   if (..isTRUE(input[[paste0(page,".save")]])) {
     f <- parseSavePath(.IGoR$config$volumes,input[[paste0(page,"SaveButton")]])$datapath
-    if (..isNotEmpty(f)) paste0(NL,"{",glue("ggsave(\"{f}\",device='png')","; .}"))
+    if (..isNotEmpty(f)) paste0(NL,"{",glue("ggsave(\"{f}\", device='png', plot=.)","; .}"))
   }
 
 
@@ -508,7 +508,7 @@ as_tibble <- function(.data) if ("tbl_df" %in% class(.data)) .data else tibble::
 
 # UI tools ----------------------------------------------------------------
 # Standardized UI for all pages
-# NOTE: To the exception of the 'mapsf' icon (maps_w_trans.png) provided by https://github.com/riatelab/mapsf/ ,
+# NOTE: To the exception of 'mapsf' one (maps_w_trans.png) garatiously provided by Timthée Giraud on https://github.com/riatelab/mapsf/ ,
 #   all icons are home made ones, transformed by https://tech-lagoon.com/imagechef/en/white-to-transparent
 
 ..ui <- function(..., page,
