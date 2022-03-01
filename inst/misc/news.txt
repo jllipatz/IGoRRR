@@ -22,11 +22,17 @@
 	Added references in NAMESPACE to prevent NOTEs on certain machines.
 	Removed error messages appearing after deleting all the tables with a graphic or tabular page activated.
 	All icons replaced. Access to www.insee.fr removed.
+0.3.0 = 0.2.2
+0.3.1
+	'tables': wasn't updated when current table structure or contents is changed (e.g. adding a column, removing rows)  
+	graphics (..gSaveCmd): fixed an incorrect usage of ggsave thatfully worked but was source of confusion.
+	'tabular': fixed unknown function '.name' error with weighting column.
 	
 BUGS:
 	view		1st dropdownbutton when no table: invalid 1st argument
 	browse		1st dropdownbutton when no table, selecting columns by name: invalid 1st argument
 	edit		button 'validate' doesn't change of state
+	slice		when destination is source, doesn't display preview and keep button
 ***	gather		transposing all variables of 'enquête' crashed IGoR (once)
 	(many)		preview width can be lost?
 
