@@ -69,7 +69,7 @@ page_gather <- list(
           else
             ..command2(
               "gather(",
-              ..name(input$gather.out.K), ",", ..name(input$gather.out.V),
+              ..name(input$gather.out.K), ", ", ..name(input$gather.out.V),
               ..select(input,"gather") %>% {if (..isNotEmpty(.)) paste0(", ", .)},
               ")"
             )
