@@ -25,7 +25,9 @@
 0.3.0 = 0.2.2
 0.3.1
 	'tables': wasn't updated when current table structure or contents is changed (e.g. adding a column, removing rows)  
-	graphics (..gSaveCmd): fixed an incorrect usage of ggsave thatfully worked but was source of confusion.
+	'import': added support of .psv files.
+	'reclass': fixed error when computing changes with reuse of names off.
+	graphics (..gSaveCmd): modified ggsave call that fully worked but was source of confusion.
 	'tabular': fixed unknown function '.name' error with weighting column.
 	
 BUGS:
