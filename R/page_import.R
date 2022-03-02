@@ -40,8 +40,9 @@ page_import <- list(
     observe({
       shinyFileChoose(input, "import",
                       roots = .IGoR$config$volumes,
-                      filetypes=c('csv',
-                 "Excel open XML"='xlsx','xls','dbf','json',
+                      filetypes=c('csv', 'psv',
+                 "Excel open XML"='xlsx',
+                                  'xls','dbf','json',
                            "Calc"="ods",
                             "SAS"='sas7bdat',
                                   'fst','feather',
@@ -109,8 +110,11 @@ page_import <- list(
                 column(width=6)
               ))
           else
+          if (type=="psv")
+            checkboxInput("import.psv.names",..s5(.IGoR$Z$import$header), TRUE)
+          else
           if (type=="dbf")
-            checkboxInput("import.dbf",..s5(.IGoR$Z$any$stringsAsFactors),FALSE)
+            checkboxInput("import.dbf",..s5(.IGoR$Z$any$stringsAsFactors), FALSE)
           else
           if (type %in% c("xls","xlsx"))
             fluidRow(
@@ -317,6 +321,7 @@ page_import <- list(
                     if (..isFALSE(input$import.csv.chars)&&..isTRUE(input$import.csv.dec)) ", dec=','",
                     if (..isTRUE(input$import.csv.chars)) ", colClasses=\"character\""
                   ),
+                psv      = if (..isTRUE(input$import.psv.names)) ", header=TRUE",
                 dbf      = glue(", as.is={..isFALSE(input$import.dbf)}"), # PB rio 0.5.16 default should be TRUE
                 xls      =,
                 xlsx     =
