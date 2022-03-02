@@ -86,18 +86,20 @@ page_reclass <- list(
           b <- data.frame(names=names(b), classes=I(b)) # may be longer than a if names are not reused
           d <- merge(a,b, by="names", all.y=TRUE)
           e <- mapply(identical, d$classes.y, d$classes.x)
-          f <- mapply(
-                 function(old,new) ("factor" %in% old)                     # possibly length(old)>1
-                                  &(new %not in% c("factor","character")), # allways length(new)==1
-                 d$classes.x[!e], d$classes.y[!e]
-               )
-          n <- length(f[f])   # Changed columns from factor to not factor nor character
           m <- length(e[!e])  # Changed columns
           if (m==0) .IGoR$Z$reclass$msg.nop
-          else paste0(
-            sprintf(.IGoR$Z$reclass$msg.result,m),
-            if (n>0) paste0("\n",.IGoR$Z$reclass$msg.factor)
-          )
+          else {
+            f <- mapply(
+                   function(old,new) ("factor" %in% old)                     # possibly length(old)>1
+                                    &(new %not in% c("factor","character")), # allways length(new)==1
+                   d$classes.x[!e], d$classes.y[!e]
+                 )
+            n <- length(f[f])   # Changed columns from factor to not factor nor character
+            paste0(
+              sprintf(.IGoR$Z$reclass$msg.result,m),
+              if (n>0) paste0("\n",.IGoR$Z$reclass$msg.factor)
+            )
+          }
         }
     ) )
 
