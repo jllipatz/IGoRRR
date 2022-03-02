@@ -23,23 +23,26 @@ page_reclass <- list(
               column(width=6,
                 selectizeInput("reclass.class.out",..s2(.IGoR$Z$reclass$class),
                                choices=c('' %>% {names(.)<- .IGoR$Z$reclass$class.none;.},
-                                       ..Znames("reclass","class",c("factor","as.character","as.double","as.integer","as.logical",
-                                                                    "as.Date","partial(as.Date,format='%d-%m-%Y')")))
+                                       ..Znames("reclass","class",c("factor","as.character","as.double","as.integer","as.logical","as.Date")))
               ) ),
               column(width=6,
-                checkboxInput("reclass.short",..s5(.IGoR$Z$reclass$short),TRUE),
-                uiOutput("reclass.empty")
+              uiOutput("reclass.parm"),
+               checkboxInput("reclass.short",..s5(.IGoR$Z$reclass$short),TRUE)
         ) ) ) )
     })
 
-    output$reclass.empty <- renderUI(
+    output$reclass.parm <- renderUI(
       if (..isEQ(input$reclass.class.out,"factor")
-        &&(length(input$reclass.type)>0)
+        &&!is.null(input$reclass.type)
         &&((input$reclass.type!=2)
          ||((input$reclass.type==2)
           &&((..isEQ(input$reclass.class,"character")&&!input$reclass.drop)
            ||(..isNE(input$reclass.class,"character")&&input$reclass.drop)))))
         checkboxInput("reclass.empty",..s5(.IGoR$Z$reclass$empty),TRUE)
+      else
+      if (..isEQ(input$reclass.class.out,"as.Date"))
+        selectizeInput("reclass.format",..s2(.IGoR$Z$reclass$format),
+                       choices=..Znames("reclass","format",c("standard","%d-%m-%Y")))
     )
 
     output$reclass.command2 <- renderUI(
@@ -51,12 +54,14 @@ page_reclass <- list(
                     &&((..isEQ(input$reclass.class,"character")&&!input$reclass.drop)
                      ||(..isNE(input$reclass.class,"character")&&input$reclass.drop))))
                   &&..isTRUE(input$reclass.empty)) ", exclude=''" else ""
+          ft <- if (..isEQ(input$reclass.class.out,"as.Date")&..isNE(input$reclass.format,"standard"))
+            glue(", format=\"{input$reclass.format}\"")
           ..command2(
             "mutate",
             if (!..isTRUE(input$reclass.short)) {
               old <- ..name(..select.columns(input,output,"reclass"))
               if (length(old)==0) paste0("() # ",.IGoR$Z$reclass$nop)
-              else glue("({..collapse0(paste0(old,'=',input$reclass.class.out,'(',old,na,')'))})")
+              else glue("({..collapse0(paste0(old,'=',input$reclass.class.out,'(',old,na,ft,')'))})")
             }
             else
               paste0(
@@ -72,6 +77,7 @@ page_reclass <- list(
                 else glue("_at({..select(input,'reclass',vars=TRUE)}, "),
                 input$reclass.class.out,
                 na,
+                ft,
                 ")"
           )   )
         }
