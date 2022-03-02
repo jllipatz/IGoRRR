@@ -1,4 +1,4 @@
-{"version": "version 1.89.0(FR)",
+{"version": "version 0.3.1(FR)",
  "init":{
    "require.msg": "*** Les packages suivants n'ont pas été chargés en mémoire :",
    "require.ask": "Puis-je charger en mémoire les packages manquants?",
@@ -407,6 +407,9 @@
    "class.as.Date": "date",
    "short": "Réutiliser les noms",
    "empty": "Mettre 'valeur manquante' pour les chaînes vides",
+   "format": "format",
+   "format.standard": "standard",
+   "format.%d-%m-%Y": "JJ-MM-AAAA",
    "msg.factor": "ATTENTION : Convertir une variable facteur en autre chose que du caractère peut conduire à des résultats inattendus.",
    "msg.nop": "Il n'y a aucune variable à convertir!",
    "msg.result": "NOTE : Il y aura %d changement(s) de type."
