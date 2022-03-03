@@ -408,9 +408,11 @@
    "short": "Réutiliser les noms",
    "empty": "Mettre 'valeur manquante' pour les chaînes vides",
    "format": "format",
-   "format.standard": "standard",
-   "format.%d-%m-%Y": "JJ-MM-AAAA",
-   "format.%d-%m-%y": "JJ-MM-AA",
+   "formats": {
+     "standard": "standard",
+     "%d-%m-%Y": "JJ-MM-AAAA",
+     "%d-%m-%y": "JJ-MM-AA"
+   },
    "msg.factor": "ATTENTION : Convertir une variable facteur en autre chose que du caractère peut conduire à des résultats inattendus.",
    "msg.nop": "Il n'y a aucune variable à convertir!",
    "msg.result": "NOTE : Il y aura %d changement(s) de type."
@@ -425,9 +427,11 @@
      "le numéro de chaque tranche devenant une modalité de la nouvelle variable qualitative.<br>",
      "<em>NOTE : si le nom de la table résultat est celui de la table courante, la page se réinitialise dès que la modification a fonctionné.</em>"],
    "method": "Méthode",
-   "method.value": "Valeurs individuelles",
-   "method.breaks": "Tranches manuelles",
-   "method.step": "Tranches régulières",
+   "methods":{
+	  "value": "Valeurs individuelles",
+      "breaks": "Tranches manuelles",
+      "step": "Tranches régulières"
+   },
    "breaks": "Breaks (séparés par des virgules)",
    "breaks.right": "Borne supérieure comprise",
    "step": "Taille des tranches",
@@ -579,9 +583,11 @@
 	 "- Ces opérations n'ont un sens qu'entre ensembles d'objets de même type : les tables impliquées doivent donc avoir la même structure.<br>",
      "<em>NOTE : la page se réinitialise dès que l'opération a fonctionné.</em>"],
    "type": "Collecter...",
-   "type.union": "l'ensemble des lignes des deux tables",
-   "type.intersect": "l'ensemble des lignes communes aux deux tables",
-   "type.setdiff": "l'ensemble des lignes de la première table n'apparaissant pas dans la seconde"
+   "types":{
+     "union": "l'ensemble des lignes des deux tables",
+     "intersect": "l'ensemble des lignes communes aux deux tables",
+     "setdiff": "l'ensemble des lignes de la première table n'apparaissant pas dans la seconde"
+   }
  },
 "join":{
    "menu.title": "Jointure sur égalité",
