@@ -42,7 +42,7 @@ page_reclass <- list(
       else
       if (..isEQ(input$reclass.class.out,"as.Date"))
         selectizeInput("reclass.format",..s2(.IGoR$Z$reclass$format),
-                       choices=..Znames("reclass","format",c("standard","%d-%m-%Y")))
+                       choices=..items("reclass","format"))
     )
 
     output$reclass.command2 <- renderUI(

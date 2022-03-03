@@ -12,6 +12,14 @@ as_tibble <- function(.data) if ("tbl_df" %in% class(.data)) .data else tibble::
 # Utilities for national language conversions -----------------------------
 
 ## Extract a list of sub items for an item of a page
+..items <- function(page, section) 
+  ..Znames(page, section,
+    Filter(Negate(is.na),
+      str_extract(names(.IGoR$Z[[page]]),
+                glue("(?<=^{section}.).*")
+  ) ) )
+
+## Renames a list of items
 ..Znames <- function(page, item, items) {
   names(items)<- Vectorize(function(x) .IGoR$Z[[page]][[paste0(item,'.',x)]])(items)
   items
