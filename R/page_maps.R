@@ -44,7 +44,6 @@ page_maps <- list(
       c
     }
 
-    LEGENDS = c("default",'topleft','top','topright', 'right','bottomright','bottom','bottomleft','left')
     THEMES = c("default", "brutal", "ink", "dark", "agolalight", "candy", "darkula", "iceberg", "green", "nevermind", "jsk", "barcelona")
     COLORS = c('',"black","white","grey","blue","lightblue","green","red")
     PALETTES = c("Mint", "Orange->Red"="OrRd","Yellow->Orange->Red"="YlOrRd",
@@ -171,23 +170,20 @@ page_maps <- list(
             column(width=6, radioButtons("maps.type", ..s2(.IGoR$Z$maps$type),
                                          ..Znames("maps","type1",c("choro","prop")))),
             column(width=6, uiOutput("maps.breaks"),
-                            selectizeInput("maps.legend",..s2(.IGoR$Z$maps$legend),
-                                         ..Znames("maps","legend", LEGENDS))
+                            selectizeInput("maps.legend",..s2(.IGoR$Z$maps$legend), ..Zitems("maps","legends"))
           ) )
         else
         if (hasType(input$maps.X,c("factor","logical","character")))
           box(width='100%',
             column(width=6, radioButtons("maps.type", ..s2(.IGoR$Z$maps$type),
                                          ..Znames("maps","type2",c("typo","symb")))),
-            column(width=6, selectizeInput("maps.legend",..s2(.IGoR$Z$maps$legend),
-                                         ..Znames("maps","legend",LEGENDS))
+            column(width=6, selectizeInput("maps.legend",..s2(.IGoR$Z$maps$legend), ..Zitems("maps","legends"))
     )     ) )
 
     output$maps.breaks <- renderUI(
       if (..isNotEmpty(input$maps.X)&&..isEQ(input$maps.type,"choro"))
         list(
-          radioButtons("maps.breaks", ..s2(.IGoR$Z$maps$breaks),
-                       ..Znames("maps","breaks",c("quantile","kmeans","fisher","jenks"))),
+          radioButtons("maps.breaks", ..s2(.IGoR$Z$maps$breaks), unname(.IGoR$Z$maps$breaks.methods)),
           numericInput("maps.nbreaks", ..s2(.IGoR$Z$maps$nbreaks), NA),
           selectizeInput("maps.pal", ..s2(.IGoR$Z$maps$pal), PALETTES),
           checkboxInput("maps.borders", ..s3(.IGoR$Z$maps$borders), TRUE)
