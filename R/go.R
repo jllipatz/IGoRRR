@@ -1,6 +1,8 @@
 go <- function(envir=.GlobalEnv, examples=TRUE) {
+  
+  language <- "FR" # The only possibility!
 
-  init(envir,examples) # libraries and global data
+  init(envir,examples,language) # libraries and global data
 
   # Enable access to images from html
   shiny::addResourcePath(prefix = "images",
@@ -13,7 +15,7 @@ go <- function(envir=.GlobalEnv, examples=TRUE) {
 
     header = shinydashboard::dashboardHeader(
       title = "I Go R"
-      ,tags$li(class = "dropdown", em(.IGoR$Z$version))
+      ,tags$li(class = "dropdown", em(glue('"{.IGoR$Z$version}" -- {utils::packageVersion("IGoRRR")}({language})')))
     ),
 
     sidebar = shinydashboard::dashboardSidebar(
