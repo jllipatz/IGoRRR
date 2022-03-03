@@ -41,8 +41,7 @@ page_reclass <- list(
         checkboxInput("reclass.empty",..s5(.IGoR$Z$reclass$empty),TRUE)
       else
       if (..isEQ(input$reclass.class.out,"as.Date"))
-        selectizeInput("reclass.format",..s2(.IGoR$Z$reclass$format),
-                       choices=..items("reclass","format"))
+        selectizeInput("reclass.format",..s2(.IGoR$Z$reclass$format), choices=..Zitems("reclass","formats"))
     )
 
     output$reclass.command2 <- renderUI(

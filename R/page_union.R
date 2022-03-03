@@ -29,9 +29,8 @@ page_union <- list(
     output$union.type <- renderUI(
       if (..isNotEmpty(input$union.data))
         box(width='100%',
-          radioButtons("union.type", ..s2(.IGoR$Z$union$type),
-                       ..Znames("union","type",c("union","intersect","setdiff"))
-    )   ) )
+          radioButtons("union.type", ..s2(.IGoR$Z$union$type), ..Zitems("union","types"))
+    )   )
 
     output$union.command2 <- renderUI(
       ..textarea("union", "...(table,table2)", 4,

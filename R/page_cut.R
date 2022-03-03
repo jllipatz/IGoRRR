@@ -36,7 +36,7 @@ page_cut <- list(
     output$cut.method <- renderUI(
       if (..isNotEmpty(input$cut.column))
         box(width='100%',
-          column(width=6, radioButtons("cut.method", ..s2(.IGoR$Z$cut$method), ..Znames("cut","method",c("value","breaks","step")))),
+          column(width=6, radioButtons("cut.method", ..s2(.IGoR$Z$cut$method), ..Zitems("cut","methods"))),
           column(width=6, uiOutput("cut.args"))
     )   )
 
