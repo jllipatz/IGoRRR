@@ -410,6 +410,7 @@
    "format": "format",
    "format.standard": "standard",
    "format.%d-%m-%Y": "JJ-MM-AAAA",
+   "format.%d-%m-%y": "JJ-MM-AA",
    "msg.factor": "ATTENTION : Convertir une variable facteur en autre chose que du caractère peut conduire à des résultats inattendus.",
    "msg.nop": "Il n'y a aucune variable à convertir!",
    "msg.result": "NOTE : Il y aura %d changement(s) de type."
