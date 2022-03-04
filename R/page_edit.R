@@ -36,7 +36,7 @@ page_edit <- list(
                   box(width='100%',
                     column(width=7, textInput("edit.out", ..s2(.IGoR$Z$any$out), input$main.data)),
                     column(width=5, actionButton("edit.save", .IGoR$Z$edit$save,
-                                                 icon=icon("refresh"),
+                                                 icon=icon("sync"), 
                                                  style="color: #fff; background-color: #337ab7; border-color: #2e6da4"))
               ) ) ),
               rHandsontableOutput("hot")
