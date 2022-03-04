@@ -1,5 +1,6 @@
 {"version": "Hoc opus, hic labor est",
  "init":{
+   "error.envir": "Le paramètre 'envir' doit être un 'environment'",
    "require.msg": "*** Les packages suivants n'ont pas été chargés en mémoire :",
    "require.ask": "Puis-je charger en mémoire les packages manquants?",
    "require.err": "*** ABANDON: Le code généré par IGoR ne pourrait pas fonctionner!",
