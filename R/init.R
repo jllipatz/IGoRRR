@@ -2,6 +2,8 @@ init <- function(envir,
                  examples,
                  language) {
   
+  if ("environment" %not in% class(envir)) stop(.IGoR$Z$init$error.envir)
+  
   # Every message, every label that is output in national language come from here
   .IGoR$Z <- jsonlite::fromJSON(system.file("text",paste0(language,".json"), package="IGoRRR"))
   
