@@ -92,6 +92,10 @@ init <- function(envir,
     df <- mapsf::mf_get_mtq()
     attr(df,'source') <- 'mapsf'
     assign(.IGoR$Z$init$example.sf, df, envir=.IGoR$env)
+    
+    df <- mtcars
+    attr(df,'source') <- 'datasets'
+    assign("mtcars", df, envir=.IGoR$env)
   }
 
 }
