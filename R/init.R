@@ -93,7 +93,7 @@ init <- function(envir,
     attr(df,'source') <- 'mapsf'
     assign(.IGoR$Z$init$example.sf, df, envir=.IGoR$env)
     
-    df <- mtcars
+    df <- datasets::mtcars
     attr(df,'source') <- 'datasets'
     assign("mtcars", df, envir=.IGoR$env)
   }
