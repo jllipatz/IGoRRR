@@ -26,11 +26,17 @@
 0.3.1
 	'tables': wasn't updated when current table structure or contents is changed (e.g. adding a column, removing rows)  
 	'import': added support of .psv files.
-	'reclass': fixed error when computing changes with reuse of names off.
+	'edit': changed butoon icon name that was deprecated.
+	'reclass': fixed error when computing changes with reuse of names.
+	           added format for date onversions.
+	'summarise': replaced deprecated 'funs'.
 	graphics (..gSaveCmd): modified ggsave call that fully worked but was source of confusion.
 	'tabular': fixed unknown function '.name' error with weighting column.
+0.3.2
+	'tables': fixed wtd.percent function made incorrect in the CRAN version
 	
 BUGS:
+	File names with spécial characters are no more supported when package comes from CRAN.
 	view		1st dropdownbutton when no table: invalid 1st argument
 	browse		1st dropdownbutton when no table, selecting columns by name: invalid 1st argument
 	edit		button 'validate' doesn't change of state
@@ -39,8 +45,10 @@ BUGS:
 	(many)		preview width can be lost?
 
 TODO:
+	Check package version in .IGoR structure: running sucessively two different versions makes IGoR exit without message.
 	mutate2		use the same table of functions as in 'mutate'
 	mutate2		Replace funs() that is deprecated.
 	filter		Add a menu when selecting on a factor.
+	import		Chande 'ods_sheets' to 'list_ods_sheets'.
 
 	
