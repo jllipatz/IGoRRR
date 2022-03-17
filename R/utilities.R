@@ -6,8 +6,7 @@
 wtd.sum     <- function(x, weights, na.rm=TRUE) sum(weights)*Hmisc::wtd.mean(x,weights,na.rm)
 
 ## Shortcut usefull to page 'tabular'
-wtd.percent <- function (x, weights, na.rm=TRUE) 100*sum(x, na.rm)/sum(weights)
-
+wtd.percent <- function (x, y) 100*sum(x)/sum(y)
 
 ## Extract the file extension in lowercase
 ..pathExt <- function (path) path %>% str_extract("(?<=\\.)[^.]+$") %>% str_to_lower()
