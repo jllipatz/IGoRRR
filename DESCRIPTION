@@ -1,9 +1,9 @@
 Package: IGoRRR
 Type: Package
 Title: A Shiny Interface for Simple Data Management
-Version: 0.3.1
+Version: 0.3.2
 Author: Jean-Luc Lipatz [aut, cre], Bernard Gestin [ctb]
-Maintainer: Jean-Luc Lipatz <jean-luc.lipatz@insee.fr>
+Maintainer: Jean-Luc Lipatz <jllipatz@protonmail.com>
 Description: 
   Launches a shiny application generating code to
     view tables in several ways,
